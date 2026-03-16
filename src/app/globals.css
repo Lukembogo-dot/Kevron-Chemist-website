@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* Brand Colors as CSS Variables */
+:root {
+  --primary: #2E75B6;
+  --secondary: #27AE60;
+  --accent: #E74C3C;
+  --dark: #34495E;
+  --light: #ECF0F1;
+}
+
+/* Smooth Transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Better Button Defaults */
+button {
+  cursor: pointer;
+}
+
+/* Input Focus States */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Scrollbar Styling (Chrome) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ECF0F1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2E75B6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1e5394;
+}
