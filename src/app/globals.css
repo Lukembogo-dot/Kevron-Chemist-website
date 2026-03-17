@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
-/* Brand Colors as CSS Variables */
+/* Dark Blue-Black Theme Variables */
 :root {
-  --primary: #2E75B6;
-  --secondary: #27AE60;
-  --accent: #E74C3C;
-  --dark: #34495E;
-  --light: #ECF0F1;
+  --primary: #3B82F6;
+  --primary-dark: #1E3A8A;
+  --accent: #60A5FA;
+  --dark: #0a0e1a;
+  --darker: #050810;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-hover: rgba(255, 255, 255, 0.1);
 }
 
 /* Smooth Transitions */
@@ -33,14 +36,151 @@ select:focus {
 }
 
 ::-webkit-scrollbar-track {
-  background: #ECF0F1;
+  background: #0a0e1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2E75B6;
+  background: #3B82F6;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1e5394;
+  background: #60A5FA;
+}
+
+/* ─── Animated Ripple Background ─── */
+
+@keyframes ripple1 {
+  0%, 100% {
+    transform: translate(0%, 0%) scale(1);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translate(5%, 10%) scale(1.2);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-5%, 5%) scale(1);
+    opacity: 0.35;
+  }
+  75% {
+    transform: translate(3%, -5%) scale(1.15);
+    opacity: 0.5;
+  }
+}
+
+@keyframes ripple2 {
+  0%, 100% {
+    transform: translate(0%, 0%) scale(1.1);
+    opacity: 0.3;
+  }
+  30% {
+    transform: translate(-8%, -5%) scale(1);
+    opacity: 0.5;
+  }
+  60% {
+    transform: translate(6%, 8%) scale(1.2);
+    opacity: 0.25;
+  }
+}
+
+@keyframes ripple3 {
+  0%, 100% {
+    transform: translate(0%, 0%) scale(1);
+    opacity: 0.25;
+  }
+  40% {
+    transform: translate(10%, -8%) scale(1.3);
+    opacity: 0.45;
+  }
+  70% {
+    transform: translate(-6%, 6%) scale(0.95);
+    opacity: 0.3;
+  }
+}
+
+@keyframes rippleExpand {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.05;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.15;
+  }
+}
+
+.ripple-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #050810 0%, #0a1628 25%, #0d1f3c 50%, #0a1628 75%, #050810 100%);
+}
+
+.ripple-bg::before,
+.ripple-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.ripple-bg::before {
+  width: 120vw;
+  height: 120vw;
+  top: -30%;
+  left: -30%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(30, 58, 138, 0.08) 40%, transparent 70%);
+  animation: ripple1 12s ease-in-out infinite;
+}
+
+.ripple-bg::after {
+  width: 100vw;
+  height: 100vw;
+  bottom: -40%;
+  right: -20%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(15, 23, 42, 0.06) 45%, transparent 70%);
+  animation: ripple2 15s ease-in-out infinite;
+}
+
+.ripple-layer-1 {
+  position: absolute;
+  width: 90vw;
+  height: 90vw;
+  top: 20%;
+  left: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.08) 0%, transparent 60%);
+  animation: ripple3 18s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.ripple-layer-2 {
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%);
+  animation: rippleExpand 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Glass Card Utility */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
 }

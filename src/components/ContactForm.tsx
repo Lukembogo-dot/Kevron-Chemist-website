@@ -30,7 +30,7 @@ export function ContactForm() {
       });
 
       if (!response.ok) throw new Error('Failed');
-      
+
       setStatus('success');
       reset();
       setTimeout(() => setStatus('idle'), 5000);
@@ -43,57 +43,57 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 max-w-md">
       <div>
-        <label className="block text-sm font-medium mb-1">Name</label>
+        <label className="block text-sm font-medium mb-1 text-gray-300">Name</label>
         <input
           {...register('name')}
-          className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#2E75B6]"
+          className="w-full px-4 py-2 bg-white/10 border border-white/15 rounded-lg focus:ring-2 focus:ring-[#3B82F6] text-white placeholder-gray-500"
           placeholder="Your name"
         />
-        {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+        {errors.name && <p className="text-red-400 text-sm">{errors.name.message}</p>}
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-1">Email</label>
+        <label className="block text-sm font-medium mb-1 text-gray-300">Email</label>
         <input
           {...register('email')}
           type="email"
-          className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#2E75B6]"
+          className="w-full px-4 py-2 bg-white/10 border border-white/15 rounded-lg focus:ring-2 focus:ring-[#3B82F6] text-white placeholder-gray-500"
           placeholder="Your email"
         />
-        {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+        {errors.email && <p className="text-red-400 text-sm">{errors.email.message}</p>}
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-1">Phone</label>
+        <label className="block text-sm font-medium mb-1 text-gray-300">Phone</label>
         <input
           {...register('phone')}
-          className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#2E75B6]"
+          className="w-full px-4 py-2 bg-white/10 border border-white/15 rounded-lg focus:ring-2 focus:ring-[#3B82F6] text-white placeholder-gray-500"
           placeholder="+254..."
         />
-        {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
+        {errors.phone && <p className="text-red-400 text-sm">{errors.phone.message}</p>}
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-1">Message</label>
+        <label className="block text-sm font-medium mb-1 text-gray-300">Message</label>
         <textarea
           {...register('message')}
           rows={4}
-          className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#2E75B6]"
+          className="w-full px-4 py-2 bg-white/10 border border-white/15 rounded-lg focus:ring-2 focus:ring-[#3B82F6] text-white placeholder-gray-500"
           placeholder="Your message..."
         />
-        {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
+        {errors.message && <p className="text-red-400 text-sm">{errors.message.message}</p>}
       </div>
 
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full bg-[#2E75B6] text-white py-2 rounded-lg hover:bg-blue-800 disabled:bg-gray-400 font-semibold transition"
+        className="w-full bg-gradient-to-r from-[#3B82F6] to-[#1E3A8A] text-white py-2.5 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 disabled:opacity-50 font-semibold transition-all"
       >
         {status === 'loading' ? 'Sending...' : 'Send Message'}
       </button>
 
-      {status === 'success' && <p className="text-green-600 text-center">Message sent! We'll contact you soon.</p>}
-      {status === 'error' && <p className="text-red-600 text-center">Error sending message. Try again.</p>}
+      {status === 'success' && <p className="text-[#60A5FA] text-center">Message sent! We'll contact you soon.</p>}
+      {status === 'error' && <p className="text-red-400 text-center">Error sending message. Try again.</p>}
     </form>
   );
 }

@@ -33,18 +33,18 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-4 text-center text-[#34495E]">Our Services</h1>
-          <p className="text-center text-gray-600 mb-16">Comprehensive pharmaceutical solutions for you and your family</p>
+          <h1 className="text-4xl font-bold mb-4 text-center text-white">Our Services</h1>
+          <p className="text-center text-gray-400 mb-16">Comprehensive pharmaceutical solutions for you and your family</p>
 
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, i) => (
-              <div key={i} className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition">
+              <div key={i} className="bg-white/5 border border-white/10 backdrop-blur-sm p-8 rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all hover:-translate-y-1">
                 <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-2 text-[#2E75B6]">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-[#60A5FA]">{service.title}</h3>
+                <p className="text-gray-400">{service.description}</p>
               </div>
             ))}
           </div>
