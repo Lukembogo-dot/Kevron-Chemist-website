@@ -29,7 +29,7 @@ export default function Footer() {
                         <h4 className="font-bold mb-6 text-lg">Contact Info</h4>
                         <ul className="space-y-4">
                             <li className="flex items-center gap-3 text-gray-400">
-                                <Phone size={18} className="text-[#60A5FA]" /> +254 7XX XXX XXX
+                                <Phone size={18} className="text-[#60A5FA]" /> +254 703355300
                             </li>
                             <li className="flex items-center gap-3 text-gray-400">
                                 <MapPin size={18} className="text-[#60A5FA]" /> Nairobi, Kenya

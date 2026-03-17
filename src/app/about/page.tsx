@@ -9,7 +9,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-2xl font-bold mb-4 text-[#60A5FA]">Our Story</h2>
               <p className="text-gray-300 mb-4">
-                Founded in [YEAR], Kevron Chemist started with a simple mission:
+                Founded in 2019, Kevron Chemist started with a simple mission:
                 to provide quality medicines and expert pharmaceutical care to every customer in Nairobi.
               </p>
               <p className="text-gray-300 mb-4">
