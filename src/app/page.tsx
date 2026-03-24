@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Clock, Pill, Truck, Users, ArrowRight, Star } from 'lucide-react';
 
 export default function Home() {
@@ -8,8 +9,20 @@ export default function Home() {
     <>
       {/* HERO SECTION */}
       <section className="relative text-white py-24 md:py-36 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/images/img1.jpeg" 
+            alt="Kevron Chemist Storefront" 
+            fill 
+            className="object-cover object-center opacity-60 grayscale-[30%]" 
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1121]/60 via-[#0B1121]/70 to-[#0B1121]"></div>
+        </div>
+
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-10 z-0 pointer-events-none">
           <div className="absolute top-10 left-10 w-32 h-32 border border-blue-400 rounded-full"></div>
           <div className="absolute top-40 right-20 w-20 h-20 border border-blue-400 rounded-full"></div>
           <div className="absolute bottom-20 left-1/4 w-16 h-16 border border-blue-400 rounded-full"></div>
@@ -117,12 +130,20 @@ export default function Home() {
                 );
               })}
             </div>
-            <div className="relative">
-              <div className="bg-white/5 border border-white/10 p-2 rounded-3xl backdrop-blur-sm">
-                <div className="bg-gradient-to-br from-[#3B82F6] via-[#1E3A8A] to-[#3B82F6] h-80 rounded-2xl flex flex-col items-center justify-center text-white">
-                  <Pill className="w-24 h-24 mb-4 opacity-90" />
-                  <p className="text-2xl font-bold">Professional Pharmacy</p>
-                  <p className="text-blue-200">Serving Nairobi since 2020</p>
+            <div className="relative h-full flex items-center">
+              <div className="bg-white/5 border border-white/10 p-2 rounded-3xl backdrop-blur-sm relative h-[400px] w-full group overflow-hidden">
+                <Image
+                  src="/images/img3.jpeg"
+                  alt="Professional Pharmacist at Kevron Chemist"
+                  fill
+                  className="object-cover rounded-2xl grayscale-[20%] transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1121]/90 via-[#0B1121]/40 to-transparent rounded-2xl"></div>
+                
+                <div className="absolute bottom-0 left-0 right-0 p-8 flex flex-col items-center text-center">
+                  <Pill className="w-12 h-12 mb-3 text-[#60A5FA] opacity-90 drop-shadow-lg" />
+                  <p className="text-2xl font-bold text-white drop-shadow-md bg-black/40 px-3 py-1 rounded-lg backdrop-blur-sm">Expert Care</p>
+                  <p className="text-blue-100 drop-shadow bg-black/40 mt-2 px-3 py-1 rounded-lg backdrop-blur-sm">Serving Nairobi since 2020</p>
                 </div>
               </div>
               {/* Floating badge */}
@@ -179,8 +200,11 @@ export default function Home() {
 
       {/* CTA SECTION */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#3B82F6]/20 to-[#1E3A8A]/20 backdrop-blur-sm border-y border-white/10"></div>
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 z-0">
+          <Image src="/images/img4.jpeg" alt="Pharmacist Counter" fill className="object-cover opacity-40 grayscale-[20%]" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1121]/80 to-[#1E3A8A]/60 backdrop-blur-[2px] border-y border-white/10 z-0"></div>
+        <div className="absolute inset-0 opacity-20 z-0">
           <div className="absolute top-0 left-0 w-40 h-40 bg-blue-400 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-60 h-60 bg-blue-500 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
         </div>

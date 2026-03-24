@@ -1,11 +1,21 @@
 import { ContactForm } from '@/components/ContactForm';
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen">
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/images/img5.jpeg" 
+            alt="Kevron Chemist Storefront" 
+            fill 
+            className="object-cover opacity-40 grayscale-[20%]" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1121]/50 via-[#0B1121]/80 to-[#0B1121]"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl font-bold mb-4 text-white">Get in Touch</h1>
           <p className="text-gray-400 mb-12">We'd love to hear from you</p>
 

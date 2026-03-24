@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
@@ -17,8 +19,14 @@ export default function AboutPage() {
                 serving thousands of satisfied customers every month.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-[#3B82F6] to-[#1E3A8A] h-96 rounded-lg flex items-center justify-center text-white border border-white/10">
-              [Business Photo]
+            <div className="relative h-96 rounded-2xl overflow-hidden border border-white/10 group">
+              <Image 
+                src="/images/img2.jpeg" 
+                alt="Inside Kevron Chemist" 
+                fill 
+                className="object-cover transition-transform duration-700 group-hover:scale-105" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1121]/80 via-[#0B1121]/20 to-transparent"></div>
             </div>
           </div>
 
