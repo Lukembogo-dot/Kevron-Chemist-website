@@ -26,7 +26,7 @@ export default function ContactPage() {
                 <Phone className="text-[#60A5FA] flex-shrink-0" />
                 <div>
                   <h3 className="font-bold mb-2 text-white">Phone</h3>
-                  <p className="text-gray-400">+254 703355300</p>
+                  <p className="text-gray-400">+254 777077737</p>
                   <p className="text-gray-400">+254 780077737</p>
                   <p className="text-gray-400">Available 24/7</p>
                 </div>
